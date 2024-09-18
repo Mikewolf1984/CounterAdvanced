@@ -26,9 +26,9 @@ class ViewController: UIViewController {
    
     @IBOutlet weak var counterValueLabel: UILabel!
     @IBOutlet weak var historyTextView: UITextView!
-    @IBOutlet weak var counterUpButton: UIButton!
-    @IBOutlet weak var counterDownButton: UIButton!
-    @IBOutlet weak var counterResetButton: UIButton!
+    @IBOutlet weak var counterUpButton: UIButton! //потом попробовать удалить
+    @IBOutlet weak var counterDownButton: UIButton! //потом попробовать удалить
+    @IBOutlet weak var counterResetButton: UIButton! //потом попробовать удалить
     @IBAction func touchUpButton(_ sender: Any) {  //обработка нажатия кнопки плюс
         counterValue+=1
         textsUpdate(text: "Значение счетчика изменено на +1")
