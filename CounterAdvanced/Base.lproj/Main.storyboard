@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CounterAdvanced" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32m-ZM-821">
+                                <rect key="frame" x="235" y="486" width="142" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="32m-ZM-821" secondAttribute="height" multiplier="71:55" id="tlq-4D-e6t"/>
+                                    <constraint firstAttribute="width" secondItem="32m-ZM-821" secondAttribute="height" multiplier="71:55" id="vQK-wZ-1xL"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="minus.square.fill" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="80"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="touchDownButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cP4-xa-Bvu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lRE-l6-PjU">
+                                <rect key="frame" x="95" y="648" width="203" height="70"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="arrow.clockwise.circle" catalog="system" title="  Обнулить счётчик">
+                                    <color key="baseBackgroundColor" systemColor="systemBrownColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="touchResetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yt7-CD-BtV"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Значение счетчика: " textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWA-z3-lgi">
+                                <rect key="frame" x="40" y="99" width="326" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="AWA-z3-lgi" secondAttribute="height" multiplier="326:21" id="PcS-sl-6nS"/>
+                                    <constraint firstAttribute="width" secondItem="AWA-z3-lgi" secondAttribute="height" multiplier="326:21" id="a4d-P4-xQq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" indicatorStyle="black" maximumZoomScale="2" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bFN-kG-JqC">
+                                <rect key="frame" x="16" y="170" width="361" height="240"/>
+                                <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                <string key="text">История изменений: 
+1
+</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" secureTextEntry="YES"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VhQ-Pg-5ob">
+                                <rect key="frame" x="49" y="510" width="74" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="VhQ-Pg-5ob" secondAttribute="height" multiplier="37:31" id="eMh-V1-MkD"/>
+                                    <constraint firstAttribute="width" secondItem="VhQ-Pg-5ob" secondAttribute="height" multiplier="37:31" id="k8A-kh-GQc"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="plus.square.fill" catalog="system" imagePlacement="leading" imagePadding="20">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="80" scale="large"/>
+                                    <color key="baseForegroundColor" red="1" green="0.0" blue="0.01666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="touchUpButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s6V-XL-PAB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bFN-kG-JqC" firstAttribute="top" secondItem="AWA-z3-lgi" secondAttribute="bottom" constant="50" id="0cf-ng-zAe"/>
+                            <constraint firstItem="AWA-z3-lgi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="1jp-vr-Kyt"/>
+                            <constraint firstItem="VhQ-Pg-5ob" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="8hA-fR-5nb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AWA-z3-lgi" secondAttribute="trailing" constant="27" id="9TZ-Rb-4qa"/>
+                            <constraint firstItem="VhQ-Pg-5ob" firstAttribute="baseline" secondItem="32m-ZM-821" secondAttribute="baseline" id="9pj-B6-o9I"/>
+                            <constraint firstItem="bFN-kG-JqC" firstAttribute="centerX" secondItem="lRE-l6-PjU" secondAttribute="centerX" id="ATk-lR-QDt"/>
+                            <constraint firstItem="AWA-z3-lgi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="FXn-PO-vhC"/>
+                            <constraint firstAttribute="bottom" secondItem="VhQ-Pg-5ob" secondAttribute="bottom" constant="280" id="GVG-Sz-iPm"/>
+                            <constraint firstItem="32m-ZM-821" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Jc3-nK-2rV"/>
+                            <constraint firstItem="lRE-l6-PjU" firstAttribute="top" secondItem="VhQ-Pg-5ob" secondAttribute="bottom" constant="76" id="P5s-IK-mPH"/>
+                            <constraint firstItem="VhQ-Pg-5ob" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="49" id="Swh-D6-qhN"/>
+                            <constraint firstItem="32m-ZM-821" firstAttribute="top" secondItem="bFN-kG-JqC" secondAttribute="bottom" constant="20" id="UaZ-aR-KQn"/>
+                            <constraint firstItem="bFN-kG-JqC" firstAttribute="trailing" secondItem="32m-ZM-821" secondAttribute="trailing" id="Xem-An-NzK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lRE-l6-PjU" secondAttribute="bottom" constant="100" id="b70-Km-BHT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="32m-ZM-821" secondAttribute="trailing" constant="20" id="cnn-6h-8fZ"/>
+                            <constraint firstItem="lRE-l6-PjU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lQb-Fp-2yM"/>
+                            <constraint firstItem="32m-ZM-821" firstAttribute="top" secondItem="bFN-kG-JqC" secondAttribute="bottom" constant="76" id="pea-N2-PBc"/>
+                            <constraint firstItem="VhQ-Pg-5ob" firstAttribute="firstBaseline" secondItem="32m-ZM-821" secondAttribute="baseline" id="xuz-38-7R5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="counterDownButton" destination="32m-ZM-821" id="iWx-iB-KU0"/>
+                        <outlet property="counterResetButton" destination="lRE-l6-PjU" id="5ph-cg-JSc"/>
+                        <outlet property="counterUpButton" destination="VhQ-Pg-5ob" id="I63-CJ-lLN"/>
+                        <outlet property="counterValueLabel" destination="AWA-z3-lgi" id="SLa-pA-xjg"/>
+                        <outlet property="historyTextView" destination="bFN-kG-JqC" id="zsF-Kl-ard"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="119.84732824427481" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.clockwise.circle" catalog="system" width="128" height="123"/>
+        <image name="minus.square.fill" catalog="system" width="128" height="114"/>
+        <image name="plus.square.fill" catalog="system" width="128" height="114"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
