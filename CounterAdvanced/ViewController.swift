@@ -8,34 +8,34 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var counterValue:Int = 0 //сюда пишем текущее значение счетчика
-    
-    func textsUpdate (text: String) { // функция, которая обновляет все тексты
+    private var counterValue:Int = 0 //сюда пишем текущее значение счетчика
+    private func textsUpdate (text: String) { // функция, которая обновляет все тексты
         
         let getDate = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.MM, HH:mm"
+        lazy var dateFormatter: DateFormatter = {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd.MM, HH:mm"
+            return dateFormatter
+        }()
+        
+        
         let dateTime = dateFormatter.string(from: getDate) // получаем дату и время
         
-        counterValueLabel.text = "Значение счётчика: "+String(counterValue) //обновляем лейбл со значение счётчика
+        counterValueLabel.text = "Значение счётчика: "+String(counterValue) //обновляем лейбл со значением счётчика
         historyTextView.text.append("\n"+dateTime+": "+text) // обновляем лог
         
         let range = NSMakeRange(historyTextView.text.count - 1, 0)
         historyTextView.scrollRangeToVisible(range) //прокручиваем лог в конец
     }
-   
-    @IBOutlet weak var counterValueLabel: UILabel!
-    @IBOutlet weak var historyTextView: UITextView!
-    @IBOutlet weak var counterUpButton: UIButton! //потом попробовать удалить
-    @IBOutlet weak var counterDownButton: UIButton! //потом попробовать удалить
-    @IBOutlet weak var counterResetButton: UIButton! //потом попробовать удалить
+    
+    @IBOutlet weak private var counterValueLabel: UILabel!
+    @IBOutlet weak private var historyTextView: UITextView!
     @IBAction func touchUpButton(_ sender: Any) {  //обработка нажатия кнопки плюс
         counterValue+=1
         textsUpdate(text: "Значение счетчика изменено на +1")
     }
     
-    
-    @IBAction func touchDownButton(_ sender: UIButton) { //обработка нажатия кнопки минус
+    @IBAction private func touchDownButton(_ sender: UIButton) { //обработка нажатия кнопки минус
         if counterValue>0 {
             counterValue-=1
             textsUpdate(text: "значение изменено на -1")
@@ -46,19 +46,19 @@ class ViewController: UIViewController {
         
     }
     
-    
-    @IBAction func touchResetButton(_ sender: Any) { //обработка нажатия кнопки сброса
-    counterValue = 0
-    textsUpdate(text: "значение сброшено")
+    @IBAction private func touchResetButton(_ sender: Any) { //обработка нажатия кнопки сброса
+        counterValue = 0
+        textsUpdate(text: "значение сброшено")
         
     }
-    override func viewDidLoad() {
+    
+    override internal func viewDidLoad() {
         super.viewDidLoad()
         counterValueLabel.text = "Значение счётчика: "+String(counterValue)
         historyTextView.text = "История изменений: "
-        // Do any additional setup after loading the view.
+        
     }
-
-
+    
+    
 }
 
